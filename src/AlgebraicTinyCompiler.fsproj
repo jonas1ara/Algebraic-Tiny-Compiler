@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Tokenizer.fs" />
+    <Compile Include="Parser.fs" />
+    <Compile Include="Assembly.fs" />
+    <Compile Include="AlgebraTypes.fs" />
+    <Compile Include="AlgebraTokenizer.fs" />
+    <Compile Include="AlgebraParser.fs" />
+    <Compile Include="AlgebraSimplifier.fs" />
+    <Compile Include="AlgebraSolver.fs" />
+    <Compile Include="AlgebraCodegen.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+</Project>
