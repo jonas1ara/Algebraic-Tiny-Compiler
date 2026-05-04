@@ -2,7 +2,7 @@
 
 A lightweight compiler for algebraic expressions written in F# to understand compiler design concepts.
 
-## 🎯 Purpose
+## Purpose
 
 This project demonstrates core compiler concepts through building an algebraic expression compiler:
 - **Tokenization**: Breaking input into meaningful tokens
@@ -11,18 +11,8 @@ This project demonstrates core compiler concepts through building an algebraic e
 - **Code Generation**: Producing optimized low-level code
 - **Equation Solving**: Solving linear and quadratic equations
 
-## 📚 Documentation
 
-### Core Guides
-
-| Document | Content |
-|----------|---------|
-| **[ALGEBRA_COMPILER.md](ALGEBRA_COMPILER.md)** | In-depth explanation of algebraic compilation pipeline |
-| **[AOT_COMPILATION_GUIDE.md](AOT_COMPILATION_GUIDE.md)** | Ahead-of-Time compilation, performance benchmarks, deployment |
-| **[STRUCTURE_FSHARP.md](STRUCTURE_FSHARP.md)** | F# architecture, type system, module hierarchy |
-| **[Blog Post](2026-05-03-understanding-compilers-through-algebra.md)** | Complete educational article on compiler design |
-
-### Quick Start
+## Quick Start
 
 ```bash
 # Build the project
@@ -37,7 +27,7 @@ Solutions:
   x1 = 1.000000
 ```
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 Input String
@@ -62,7 +52,7 @@ Solver / Codegen → Solutions / Assembly Code
 | **AlgebraSolver.fs** | Linear and quadratic equation solving |
 | **AlgebraCodegen.fs** | Code generation - produces assembly-like output |
 
-## 📝 Supported Syntax
+## Supported Syntax
 
 ### Expressions
 ```
@@ -79,15 +69,15 @@ x^2 - 5x + 6 = 0
 ```
 
 ### Features
-- ✅ Variables and coefficients
-- ✅ Powers (x^n)
-- ✅ Parentheses grouping
-- ✅ Implicit multiplication (2x, 2(x+1))
-- ✅ Like-term combining
-- ✅ Linear equation solving
-- ✅ Quadratic equation solving (with discriminant)
+- Variables and coefficients
+- Powers (x^n)
+- Parentheses grouping
+- Implicit multiplication (2x, 2(x+1))
+- Like-term combining
+- Linear equation solving
+- Quadratic equation solving (with discriminant)
 
-## 🚀 Compilation Modes
+## Compilation Modes
 
 ### JIT (Default)
 ```bash
@@ -103,9 +93,7 @@ dotnet publish src/ -c Release -r win-x64 --self-contained /p:PublishAot=true
 # Startup: ~5ms, Memory: ~15MB, GC pauses: none
 ```
 
-See [AOT_COMPILATION_GUIDE.md](AOT_COMPILATION_GUIDE.md) for benchmarks and deployment instructions.
-
-## 📚 Learning Outcomes
+## Learning Outcomes
 
 After studying this compiler, you'll understand:
 
@@ -118,7 +106,7 @@ After studying this compiler, you'll understand:
 7. **JIT vs AoT**: Compilation strategy impacts on performance and memory
 8. **F# Functional Programming**: Discriminated unions, pattern matching, recursion
 
-## 🔧 Technical Highlights
+## Technical Highlights
 
 - **F# Discriminated Unions** for type-safe AST representation
 - **Recursive Descent Parser** with operator precedence handling
@@ -127,7 +115,7 @@ After studying this compiler, you'll understand:
 - **Virtual Register** allocation in code generation
 - **AoT Compilation** for 40x faster startup and minimal memory
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 Algebraic-Tiny-Compiler/
@@ -150,15 +138,7 @@ Algebraic-Tiny-Compiler/
 └── 2026-05-03-understanding-compilers-through-algebra.md  # Educational blog post
 ```
 
-## 🎓 Educational Path
-
-1. **Start here**: Read [STRUCTURE_FSHARP.md](STRUCTURE_FSHARP.md) for project organization
-2. **Understand the pipeline**: Study [ALGEBRA_COMPILER.md](ALGEBRA_COMPILER.md)
-3. **Deep dive**: Read the [blog post](2026-05-03-understanding-compilers-through-algebra.md)
-4. **Explore the code**: Browse `src/` modules following the architecture diagram
-5. **Optimize it**: Follow [AOT_COMPILATION_GUIDE.md](AOT_COMPILATION_GUIDE.md)
-
-## 📖 References
+## References
 
 - [Blog Post: Understanding Compilers Through Algebra](2026-05-03-understanding-compilers-through-algebra.md)
 - [F# Language Reference](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/)
@@ -168,6 +148,3 @@ Algebraic-Tiny-Compiler/
 - Compiler textbook: "Engineering a Compiler" by Cooper & Torczon
 - Online resource: [Crafting Interpreters](https://craftinginterpreters.com/)
 
-## 📄 License
-
-Educational project for learning compiler design.
