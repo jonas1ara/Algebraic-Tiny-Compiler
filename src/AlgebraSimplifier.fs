@@ -2,7 +2,7 @@ module AlgebraSimplifier
 
 open AlgebraTypes
 
-/// Convierte una expresión a polinomio
+/// Converts an expression to a polynomial
 let rec exprToPolynomial (expr: Expr) : Polynomial option =
     match expr with
     | Num n ->
@@ -61,11 +61,11 @@ and private simplifyTerms (terms: Term list) : Term list =
     |> List.filter (fun t -> t.Coefficient <> 0.0)
     |> List.sortByDescending (fun t -> (t.Power, t.Variable))
 
-/// Expande una expresión (multiplica todos los términos)
+/// Expands an expression (multiplies all terms)
 let expandExpression (expr: Expr) : Polynomial option =
     exprToPolynomial expr
 
-/// Simplifica una expresión
+/// Simplifies an expression
 let simplifyExpression (expr: Expr) : Expr =
     match exprToPolynomial expr with
     | Some poly ->
@@ -78,7 +78,7 @@ let simplifyExpression (expr: Expr) : Expr =
         | _ -> expr
     | None -> expr
 
-/// Evalúa una expresión con valores para variables
+/// Evaluates an expression with values for variables
 let rec evaluateExpr (expr: Expr) (vars: Map<string, float>) : float option =
     match expr with
     | Num n -> Some n
@@ -107,7 +107,7 @@ let rec evaluateExpr (expr: Expr) (vars: Map<string, float>) : float option =
         | None -> None
     | Paren e -> evaluateExpr e vars
 
-/// Convierte un polinomio a string legible
+/// Converts a polynomial to a readable string
 let polynomialToString (poly: Polynomial) : string =
     match poly.Terms with
     | [] -> "0"

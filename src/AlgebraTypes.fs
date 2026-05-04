@@ -1,40 +1,40 @@
 module AlgebraTypes
 
-/// Expresión algebraica abstracta
+/// Abstract algebraic expression
 type Expr =
     | Num of float
     | Var of string
-    | Binop of string * Expr * Expr  // op, left, right
-    | UnaryOp of string * Expr       // op, expr
+    | Binop of string * Expr * Expr  // operator, left, right
+    | UnaryOp of string * Expr       // operator, expression
     | Power of Expr * int            // base, exponent
     | Paren of Expr
 
-/// Término en un polinomio (coeficiente * variable^potencia)
+/// Term in a polynomial (coefficient * variable^power)
 type Term = {
     Coefficient: float
     Variable: string
     Power: int
 }
 
-/// Polinomio (suma de términos)
+/// Polynomial (sum of terms)
 type Polynomial = {
     Terms: Term list
 }
 
-/// Ecuación (izquierda = derecha)
+/// Equation (left = right)
 type Equation = {
     Left: Expr
     Right: Expr
 }
 
-/// Matriz
+/// Matrix
 type Matrix = {
     Rows: int
     Cols: int
     Data: float[,]
 }
 
-/// AST simplificado después del análisis
+/// Simplified AST after semantic analysis
 type SimplifiedExpr =
     | NumVal of float
     | VarExpr of string

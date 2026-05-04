@@ -20,12 +20,12 @@ let processInput (input: string) =
     printfn "Input: %s" input
     printfn ""
     
-    // Verificar si es una ecuación algebraica
+    // Check if it's an algebraic equation
     match AlgebraParser.parseEquation input with
     | Some equation ->
         printfn "[EQUATION DETECTED]"
         
-        // Simplificar lados
+        // Simplify sides
         let leftSimplified = AlgebraSimplifier.expandExpression equation.Left
         let rightSimplified = AlgebraSimplifier.expandExpression equation.Right
         
@@ -34,19 +34,19 @@ let processInput (input: string) =
             printfn "Left side:  %s" (polynomialToString lpoly)
             printfn "Right side: %s" (polynomialToString rpoly)
             
-            // Resolver la ecuación
+            // Solve the equation
             let solutions = AlgebraSolver.solveEquation equation
             printfn ""
             printSolutions solutions
             
-            // Generar código
+            // Generate code
             printfn "\nGenerated Code:"
             let code = AlgebraCodegen.generateEquationCode equation
             code |> List.iter (printfn "%s")
         | _ -> printfn "Error parsing equation sides")
     
     | None ->
-        // Intentar como expresión algebraica simple
+        // Try as a simple algebraic expression
         match AlgebraParser.parseExpressionString input with
         | Some expr ->
             printfn "[EXPRESSION DETECTED]"
@@ -56,7 +56,7 @@ let processInput (input: string) =
                 printfn "Expanded: %s" (polynomialToString poly)
                 printfn ""
                 
-                // Generar código
+                // Generate code
                 printfn "Generated Code:"
                 let code = AlgebraCodegen.generateCode expr
                 code |> List.iter (fun line -> printfn "  %s" line)
